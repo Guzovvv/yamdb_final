@@ -33,8 +33,8 @@ class UsersSerializer(serializers.ModelSerializer):
         return value
 
     def validate_username(self, value):
-#        if value == 'me':
-#           raise ValidationError('Недопустимое имя пользователя!')
+#       if value == 'me':
+#          raise ValidationError('Недопустимое имя пользователя!')
         if User.objects.filter(username=value).exists():
             raise ValidationError('Пользователь с таким именем '
                                   'уже зарегистрирован')
