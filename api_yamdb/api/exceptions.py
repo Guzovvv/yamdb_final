@@ -3,6 +3,6 @@ class ApiError(Exception):
     pass
 
 
-class UserValueException(ApiError):
+class UserValueError(ApiError):
     """Имя пользователя не существет в базе."""
     pass
