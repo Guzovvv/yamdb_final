@@ -1,7 +1,17 @@
 from api.exceptions import UserValueError
 from api.permisions import IsAdmin, IsAdminOrReadOnly, ReviewCommentPermission
-from api.serializers import CategoryReadSerializer, CategorySerializer, CommentSerializer, ConfirmationSerializer, \
-    GenreSerializer, ReviewSerializer, TitlePostSerializer, TitleSerializer, TokenSerializer, UsersSerializer
+from api.serializers import (
+    CategoryReadSerializer,
+    CategorySerializer,
+    CommentSerializer,
+    ConfirmationSerializer,
+    GenreSerializer,
+    ReviewSerializer,
+    TitlePostSerializer,
+    TitleSerializer,
+    TokenSerializer,
+    UsersSerializer,
+)
 from api_yamdb.settings import DEFAULT_FROM_EMAIL
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
@@ -32,8 +42,7 @@ def get_confirmation_code(request):
     confirmation_code = default_token_generator.make_token(user)
     mail_subject = "Подтверждение доступа на api_yamdb"
     message = f"Ваш код подтверждения: {confirmation_code}"
-    send_mail(mail_subject, message, DEFAULT_FROM_EMAIL, [email],
-              fail_silently=False)
+    send_mail(mail_subject, message, DEFAULT_FROM_EMAIL, [email], fail_silently=False)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
@@ -52,8 +61,7 @@ def get_jwt_token(request):
             status=status.HTTP_400_BAD_REQUEST,
         )
     refresh = RefreshToken.for_user(user)
-    return Response({"access": str(refresh.access_token)},
-                    status=status.HTTP_200_OK)
+    return Response({"access": str(refresh.access_token)}, status=status.HTTP_200_OK)
 
 
 class UsersViewSet(viewsets.ModelViewSet):
@@ -64,8 +72,7 @@ class UsersViewSet(viewsets.ModelViewSet):
     pagination_class = PageNumberPagination
 
     @action(
-        detail=False, methods=["get", "patch"],
-        permission_classes=[IsAuthenticated]
+        detail=False, methods=["get", "patch"], permission_classes=[IsAuthenticated]
     )
     def me(self, request):
         user = request.user
@@ -100,15 +107,13 @@ class CommentViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         review = get_object_or_404(
-            Review, id=self.kwargs.get("review_id"),
-            title=self.kwargs.get("title_id")
+            Review, id=self.kwargs.get("review_id"), title=self.kwargs.get("title_id")
         )
         return review.comments.all()
 
     def perform_create(self, serializer):
         review = get_object_or_404(Review, pk=self.kwargs.get("review_id"))
-        serializer.save(title=review.title, review=review,
-                        author=self.request.user)
+        serializer.save(title=review.title, review=review, author=self.request.user)
 
 
 class TitlesViewSet(viewsets.ModelViewSet):
