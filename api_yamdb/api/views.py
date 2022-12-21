@@ -19,6 +19,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from reviews.models import Category, Genre, Review, Title, User
 from api_yamdb.settings import DEFAULT_FROM_EMAIL
+
 from .filters import TitlesFilter
 
 
