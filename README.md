@@ -1,3 +1,5 @@
+![Github CI/CD](https://github.com/guzovvv/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
 ## Проект YaMDb
 
 Проект нацелен на сбор **отзывов** на всевозможные **произведения**, без возможности хранения или воспроизведения произведений. 
