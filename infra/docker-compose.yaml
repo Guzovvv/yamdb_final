@@ -7,7 +7,7 @@ services:
     env_file:
       - ./.env
   web:
-    build: ../api_yamdb
+    image: ${{ secrets.DOCKER_USER }}/yamdb_final:latest
     restart: always
     volumes:
       - static_value:/app/static/
