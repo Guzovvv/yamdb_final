@@ -69,9 +69,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            cd yamdb_infra
-            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
-            sudo docker stop $(sudo docker ps -a -q)
             sudo docker-compose stop
             sudo docker-compose rm -f web
             touch .env
