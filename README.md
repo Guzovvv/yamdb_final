@@ -120,4 +120,3 @@ sudo docker compose exec web python manage.py collectstatic --no-input
 ----------
 
 * [Гузов Владимир] (https://github.com/guzovvv)
-Яндекс.Практикум, когорта № 40
