@@ -114,3 +114,9 @@ sudo docker compose exec web python manage.py collectstatic --no-input
 - API http://<IP-адрес_вашего_сервера>/api/v1/
 - ReDoc http://<IP-адрес_вашего_сервера>/redoc/
 - Админ зона Django http://<IP-адрес_вашего_сервера>/admin/
+
+
+**Автор**
+----------
+
+[Гузов Владимир] (https://github.com/guzovvv), Яндекс.Практикум, когорта № 40
