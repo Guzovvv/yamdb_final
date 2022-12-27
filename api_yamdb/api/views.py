@@ -1,4 +1,3 @@
-from api.exceptions import UserValueError
 from api.permisions import IsAdmin, IsAdminOrReadOnly, ReviewCommentPermission
 from api.serializers import (CategoryReadSerializer, CategorySerializer,
                              CommentSerializer, ConfirmationSerializer,
@@ -47,8 +46,6 @@ def get_jwt_token(request):
     serializer = TokenSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     user = get_object_or_404(User, username=serializer.data.get("username"))
-    if not user:
-        raise UserValueError("Ошибка имени пользователя")
     confirmation_code = serializer.data.get("confirmation_code")
     if not default_token_generator.check_token(user, confirmation_code):
         return Response(
