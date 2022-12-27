@@ -1,4 +1,5 @@
-![Github CI/CD](https://github.com/guzovvv/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+[![Github CI/CD](https://github.com/guzovvv/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)]
+(https://github.com/guzovvv/yamdb_final/actions/workflows/yamdb_workflow.yml)
 
 ## Проект YaMDb
 
@@ -22,6 +23,11 @@
 [![GitHub%20Actions](https://img.shields.io/badge/-GitHub%20Actions-464646?style=flat-square&logo=GitHub%20actions)](https://github.com/features/actions)
 [![Yandex.Cloud](https://img.shields.io/badge/-Yandex.Cloud-464646?style=flat-square&logo=Yandex.Cloud)](https://cloud.yandex.ru/)
 
+## В настоящее время проект доступен по следующим адресам:
+- API http://51.250.4.10/api/v1/
+- ReDoc http://51.250.4.10/redoc/
+- Админ зона Django http://51.250.4.10/admin/
+После перезапуска сервера, IP адрес изменится и проект перестанет быть доступным по указанным адресам.
 
 ## Запуск проекта YaMDb на сервере: 
 
