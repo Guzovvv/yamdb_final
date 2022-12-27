@@ -1,5 +1,4 @@
-[![Github CI/CD](https://github.com/guzovvv/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)]
-(https://github.com/guzovvv/yamdb_final/actions/workflows/yamdb_workflow.yml)
+[![Github CI/CD](https://github.com/guzovvv/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/guzovvv/yamdb_final/actions/workflows/yamdb_workflow.yml)
 
 ## Проект YaMDb
 
