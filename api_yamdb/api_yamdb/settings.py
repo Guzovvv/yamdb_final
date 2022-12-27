@@ -142,4 +142,4 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
-DEFAULT_FROM_EMAIL = 'apiYamdb@yandex.ru'
+DEFAULT_FROM_EMAIL = 'guzovvv@yandex.ru'
